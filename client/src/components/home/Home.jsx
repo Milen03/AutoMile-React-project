@@ -17,21 +17,13 @@ export default function Home(){
           />
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm text-gray-300 ring-1 ring-gray-700 hover:ring-gray-500">
-              Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-indigo-400">
-                <span aria-hidden="true" className="absolute inset-0" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
           <div className="text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-              Data to enrich your online business
+              Auto Mile
             </h1>
             <p className="mt-8 text-lg font-medium text-gray-400 sm:text-xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
+            Are you looking for a car or do you want to buy one?<br /><br />
+            Here you can buy and sell your car quick and easy
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -40,9 +32,7 @@ export default function Home(){
               >
                 Get started
               </a>
-              <a href="#" className="text-sm font-semibold text-gray-100">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              
             </div>
           </div>
         </div>

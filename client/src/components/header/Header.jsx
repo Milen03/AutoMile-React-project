@@ -7,8 +7,11 @@ import { Link, NavLink } from 'react-router'
 const navigation = [
     { name: 'Home', path: '/' },
     { name: 'Catalog', path: '/catalog' },
-    { name: 'About', path: '/about' },
-    { name: 'Company', path: '/company' },
+    { name: 'Add Car', path: '/create' },
+    { name: 'Login', path: '/login' },
+    { name: 'Registar', path: '/registar' },
+    { name: 'Logout', path: '/logout' }
+
   ]
 export default function Header(){
 
