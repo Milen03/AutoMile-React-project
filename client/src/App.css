@@ -1,2 +1,7 @@
+html, body {
+  background-color: #111827; /* Тъмен фон */
+  color: white;
+  min-height: 100vh;
+}
 
 @import "tailwindcss";

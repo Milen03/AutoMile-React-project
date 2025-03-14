@@ -1,5 +1,7 @@
 
 import './App.css'
+import { Route,Routes } from 'react-router'
+import Header from './components/header/Header.jsx'
 import Home from './components/home/Home.jsx'
 
 function App() {
@@ -7,7 +9,10 @@ function App() {
 
   return (
     <>
-      <Home />
+    <Header />
+    <Routes>
+    <Route path='/' element={<Home />}/>
+    </Routes>
     </>
   )
 }
