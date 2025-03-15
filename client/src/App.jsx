@@ -5,6 +5,7 @@ import Header from './components/header/Header.jsx'
 import Home from './components/home/Home.jsx'
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx'
+import Create from './components/create/Create.jsx'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
     <Header />
     <Routes>
     <Route path='/' element={<Home />}/>
+    <Route path='/create' element={<Create />}/>
     <Route path='/login' element={<Login />}/>
     <Route path='/register' element={<Register />}/>
     </Routes>
