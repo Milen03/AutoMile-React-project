@@ -9,7 +9,7 @@ const navigation = [
     { name: 'Catalog', path: '/catalog' },
     { name: 'Add Car', path: '/create' },
     { name: 'Login', path: '/login' },
-    { name: 'Registar', path: '/registar' },
+    { name: 'Registar', path: '/register' },
     { name: 'Logout', path: '/logout' }
 
   ]
