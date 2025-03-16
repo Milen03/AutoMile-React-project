@@ -1,8 +1,29 @@
 
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import { create } from '../../api/carsApi.js'
 
 export default function Create() {
+    const navigation = useNavigate()
+    const submitAction = async (formData) => {
+        //get form data 
+        const carData = Object.fromEntries(formData)
+
+        //validate empty fields
+        if (!Object.values(carData).every(value => value)) {
+            return alert('All fields are required!')
+        }
+
+        try {
+            await create(carData)
+            navigation('/catalog')
+
+        } catch (err) {
+            alert(err.message)
+        }
+    }
+
+
     return (
         <div className="relative min-h-screen bg-[#111827] text-white">
             {/* Първи тъмен градиент */}
@@ -21,7 +42,7 @@ export default function Create() {
 
             {/* Form Content */}
             <div className="relative z-10 p-8">
-                <form>
+                <form action={submitAction}>
                     <div className="space-y-12">
                         {/* Personal Information Section */}
                         <div className="border-b border-gray-600/10 pb-12">
@@ -59,7 +80,7 @@ export default function Create() {
                                     </div>
                                 </div>
 
-                                
+
 
                                 <div className="sm:col-span-4">
                                     <label htmlFor="car-year" className="block text-sm font-medium text-white">
@@ -78,7 +99,7 @@ export default function Create() {
 
                                 <div className="sm:col-span-3">
                                     <label htmlFor="price" className="block text-sm font-medium text-white">
-                                    Price
+                                        Price
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -89,7 +110,7 @@ export default function Create() {
                                         />
                                     </div>
                                 </div>
-                                
+
 
                                 <div className="sm:col-span-3">
                                     <label htmlFor="engine" className="block text-sm font-medium text-white">
@@ -191,12 +212,12 @@ export default function Create() {
                             Cancel
                         </Link>
 
-                        <Link
-                            to="/catalog"
+                        <button
+                            type="submit"
                             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
                             Save
-                        </Link>
+                        </button>
                     </div>
                 </form>
             </div>
