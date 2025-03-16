@@ -5,6 +5,7 @@ import { create } from '../../api/carsApi.js'
 
 export default function Create() {
     const navigation = useNavigate()
+    
     const submitAction = async (formData) => {
         //get form data 
         const carData = Object.fromEntries(formData)

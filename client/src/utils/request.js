@@ -2,7 +2,10 @@ import { getUserData } from "../utils/userUtils.js"
 
 export const request = async (method, url, data) => {
     const {accessToken}=getUserData()
-    let requestOption = {}
+    let requestOption = {
+        method,
+        headers:{}
+    }
 
     if (data) {
         requestOption.headers = {

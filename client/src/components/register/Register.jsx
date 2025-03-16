@@ -1,6 +1,39 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { register } from "../../api/userApi.js";
+import { saveUserData } from "../../utils/userUtils.js";
 
 export default function Register() {
+    const navigation = useNavigate()
+
+    const submitActionRegister = async (e) => {
+         
+         e.preventDefault();
+         const formData = new FormData(e.target);
+        const email = formData.get('email')
+        const password = formData.get('password')
+        const rePassword = formData.get('re-password')
+
+        if(email===''||password===''||rePassword===''){
+            return alert('Fields are required!')
+            }
+
+            if(password!==rePassword){
+                return alert("Passwords don't match");
+            } 
+
+            try{
+                const userData = await register(email,password)
+
+                saveUserData(userData)
+
+                navigation('/')
+
+            }catch(err){
+                alert(err.message)
+            }
+    }
+
+
     return (
       <div className="relative min-h-screen bg-[#111827] text-white">
         {/* Първи тъмен градиент */}
@@ -27,7 +60,7 @@ export default function Register() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={submitActionRegister} className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
