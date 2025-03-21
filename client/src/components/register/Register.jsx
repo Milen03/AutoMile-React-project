@@ -1,11 +1,32 @@
 import { Link, useNavigate } from "react-router";
+import { useRegister } from "../../api/authApi.js";
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext.js";
 
 ;
 
 export default function Register() {
     const navigation = useNavigate()
-
+    const { register } = useRegister()
+    const { userLoginHandeler } = useContext(UserContext)
     
+    const registerHandler = async(formData) =>{
+
+      const {email,password} = Object.fromEntries(formData)
+
+      const confirmPassword = formData.get('re-password')
+
+      if(confirmPassword !== password){
+        alert('Password not mathing')
+      }
+
+      const authData = await register(email,password)
+
+      userLoginHandeler(authData)
+
+      navigation('/')
+    }
+
 
     return (
       <div className="relative min-h-screen bg-[#111827] text-white">
@@ -33,7 +54,7 @@ export default function Register() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form onSubmit='#' className="space-y-6">
+            <form action={registerHandler} className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
