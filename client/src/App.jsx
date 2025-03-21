@@ -1,5 +1,6 @@
 
 import './App.css'
+import { useState } from 'react'
 import { Route,Routes } from 'react-router'
 import Header from './components/header/Header.jsx'
 import Home from './components/home/Home.jsx'
@@ -7,12 +8,23 @@ import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx'
 import Create from './components/create/Create.jsx'
 import Catalog from './components/catalog/Catalog.jsx'
+import { UserContext } from './context/userContext.js'
 
 function App() {
-  
+  const [authData,setAuthData] = useState({})
+
+  const userLoginHandeler = (resultData) =>{
+    
+    setAuthData(resultData)
+  }
+
+  const userLogoutHandeler = () =>{
+    setAuthData({})
+  }
 
   return (
     <>
+    <UserContext.Provider value={{...authData,userLoginHandeler,userLogoutHandeler}}>
     <Header />
     <Routes>
     <Route path='/' element={<Home />}/>
@@ -21,6 +33,7 @@ function App() {
     <Route path='/login' element={<Login />}/>
     <Route path='/register' element={<Register />}/>
     </Routes>
+    </UserContext.Provider>
     </>
   )
 }
