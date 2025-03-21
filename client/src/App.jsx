@@ -9,6 +9,7 @@ import Register from './components/register/Register.jsx'
 import Create from './components/create/Create.jsx'
 import Catalog from './components/catalog/Catalog.jsx'
 import { UserContext } from './context/userContext.js'
+import Logout from './components/logout/Logout.jsx'
 
 function App() {
   const [authData,setAuthData] = useState({})
@@ -31,6 +32,7 @@ function App() {
     <Route path='/create' element={<Create />}/>
     <Route path='/catalog' element={<Catalog />}/>
     <Route path='/login' element={<Login />}/>
+    <Route path='/logout' element={<Logout />}/>
     <Route path='/register' element={<Register />}/>
     </Routes>
     </UserContext.Provider>
