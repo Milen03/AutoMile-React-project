@@ -6,8 +6,8 @@ import { Link, NavLink } from 'react-router'
 
 const navigation = [
     { name: 'Home', path: '/' },
-    { name: 'Catalog', path: '/catalog' },
-    { name: 'Add Car', path: '/create' },
+    { name: 'Catalog', path: '/cars/catalog' },
+    { name: 'Add Car', path: '/cars/create' },
     { name: 'Login', path: '/login' },
     { name: 'Registar', path: '/register' },
     { name: 'Logout', path: '/logout' }
@@ -22,14 +22,14 @@ export default function Header(){
           <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            {/* <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
               />
-            </a>
+            </a> */}
           </div>
           <div className="flex lg:hidden">
             <button
