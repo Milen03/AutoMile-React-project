@@ -1,6 +1,27 @@
-import { Link } from "react-router";
+import { useActionState, useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { UserContext } from "../../context/userContext.js";
+import { useLogin } from "../../api/authApi.js";
 
 export default function Login() {
+      const navigate = useNavigate()
+      const { userLoginHandeler } = useContext(UserContext)
+      const { login } = useLogin()
+
+      const loginHandler = async(_,formData) =>{
+        const values = Object.fromEntries(formData)
+
+        const authData = await login(values.email, values.password)
+
+        userLoginHandeler(authData)
+
+        navigate('/catalog')
+
+        return values
+      }
+
+      const [_,loginAction , isPending] = useActionState(loginHandler, {email: '', password: ''})
+
     return (
       <div className="relative min-h-screen bg-[#111827] text-white">
         {/* Първи тъмен градиент */}
@@ -27,7 +48,7 @@ export default function Login() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form action={loginAction} method="POST" className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
@@ -72,6 +93,7 @@ export default function Login() {
               <div>
                 <button
                   type="submit"
+                  disabled={isPending}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Sign in
