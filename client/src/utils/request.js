@@ -1,39 +1,38 @@
-import { getUserData } from "../utils/userUtils.js"
-
-export const request = async (method, url, data) => {
-    const {accessToken}=getUserData()
-    let requestOption = {
-        method,
-        headers:{}
-    }
-
-    if (data) {
-        requestOption.headers = {
-            'Content-Type': 'application/json'
-        }
-        requestOption.body = JSON.stringify(data)
-    }
-
-    if(accessToken){
-        requestOption.headers={
-            ...requestOption.headers,
-            'X-Authorization': accessToken
-        }
-    }
+const request = async (method, url, data,options = {}) => {
+    
 
     if (method !== 'GET') {
-        requestOption.method = method
+        options.method = method
+      
     }
-
-    const response = await fetch(url, requestOption)
-
-    if(!response.ok){
-        throw response.json()
+    if(data){
+        options = {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers,
+            },
+            body: JSON.stringify(data)
+        }
     }
-if(response.status==204){
-    return
-}
+  
+
+    const response = await fetch(url, options)
+    const responseContentType = response.headers.get('Content-Type')
+    if(!responseContentType){
+     return
+    }
+    
     const result = await response.json()
+
     return result
+}
+
+export default{
+    get: request.bind(null, 'GET'),
+    post: request.bind(null, 'POST'),
+    put: request.bind(null, 'PUT'),
+    delete: request.bind(null, 'DELETE'),
+    baseRequest: request,
 
 }
