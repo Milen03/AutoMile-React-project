@@ -42,12 +42,11 @@ const products = [
     // More products...
   ]
 
-import { useEffect, useState } from "react"
-import { getAll } from "../../api/carsApi.js"
+
 
 
 export default function Catalog() {
-    const [cars, setCars] = useState([])
+    // const [cars, setCars] = useState([])
 
 
 
@@ -74,7 +73,7 @@ export default function Catalog() {
 
                 <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                     {products.map((product) => (
-                        <a key={product.id} href={product.href} className="group">
+                        <a key={product.id} href='#' className="group">
                             <img
                                 alt={product.imageAlt}
                                 src={product.imageSrc}

@@ -1,30 +1,10 @@
 
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Link, useNavigate } from 'react-router'
-import { create } from '../../api/carsApi.js'
 
 export default function Create() {
     const navigation = useNavigate()
     
-    const submitAction = async (formData) => {
-        //get form data 
-        const carData = Object.fromEntries(formData)
-
-        //validate empty fields
-        if (!Object.values(carData).every(value => value)) {
-            return alert('All fields are required!')
-        }
-
-        try {
-            await create(carData)
-            navigation('/catalog')
-
-        } catch (err) {
-            alert(err.message)
-        }
-    }
-
-
     return (
         <div className="relative min-h-screen bg-[#111827] text-white">
             {/* Първи тъмен градиент */}
@@ -43,7 +23,7 @@ export default function Create() {
 
             {/* Form Content */}
             <div className="relative z-10 p-8">
-                <form action={submitAction}>
+                <form action='#'>
                     <div className="space-y-12">
                         {/* Personal Information Section */}
                         <div className="border-b border-gray-600/10 pb-12">
