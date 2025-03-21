@@ -1,9 +1,20 @@
 
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { Link, useNavigate } from 'react-router'
+import { useCreateCar } from '../../api/carsApi.js'
 
 export default function Create() {
-    const navigation = useNavigate()
+    const navigate = useNavigate()
+
+    const { create } = useCreateCar()
+
+    const submitAction = async (formData) =>{
+        const carData = Object.fromEntries(formData)
+
+        await create(carData)
+
+        navigate('/catalog')
+    }
     
     return (
         <div className="relative min-h-screen bg-[#111827] text-white">
@@ -23,7 +34,7 @@ export default function Create() {
 
             {/* Form Content */}
             <div className="relative z-10 p-8">
-                <form action='#'>
+                <form action={submitAction}>
                     <div className="space-y-12">
                         {/* Personal Information Section */}
                         <div className="border-b border-gray-600/10 pb-12">
