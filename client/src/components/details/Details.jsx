@@ -1,4 +1,7 @@
 'use client'
+import { Link, useNavigate, useParams } from "react-router"
+import useAuth from "../../hooks/useAuth.js"
+import { useCar, useDelete } from "../../api/carsApi.js"
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -56,9 +59,13 @@ const product = {
 
 export default function Details() {
 
-    
+    const navigation = useNavigate()
+    const { email,_id:userId } = useAuth()
+    const { carId } = useParams()
+    const { car } = useCar(carId)
+    const { deleteGame } = useDelete()
 
-
+    const isOwner = userId === car._ownerId
   return (
     <div className="relative min-h-screen bg-[#111827] text-white">
       {/* Първи тъмен градиент */}
@@ -122,8 +129,8 @@ export default function Details() {
           
          
           <img
-            alt={product.images[3].alt}
-            src={product.images[3].src}
+          
+            src={car.imageUrl}
             className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
           />
         </div>
@@ -133,14 +140,17 @@ export default function Details() {
           {/* Заглавие (лява част) */}
           <div className="lg:col-span-2 lg:border-r lg:border-gray-600 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              {product.name}
+              {car.brand}
+            </h1>
+            <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+              {car.model}
             </h1>
           </div>
 
           {/* Опции (дясна част) */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-white">{product.price}</p>
+            <p className="text-3xl tracking-tight text-white">{car.price} Lv</p>
 
             {/* Reviews */}
            
