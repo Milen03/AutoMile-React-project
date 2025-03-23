@@ -15,7 +15,7 @@ export default function Login() {
 
         userLoginHandeler(authData)
 
-        navigate('/catalog')
+        navigate('/cars/catalog')
 
         return values
       }
