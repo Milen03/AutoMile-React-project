@@ -12,9 +12,10 @@ import { UserContext } from './context/userContext.js'
 import Logout from './components/logout/Logout.jsx'
 import Details from './components/details/Details.jsx'
 import Edit from './components/edit/Edit.jsx'
+import usePersistedState from './hooks/usePersistedState.js'
 
 function App() {
-  const [authData,setAuthData] = useState({})
+  const [authData,setAuthData] = usePersistedState('auth',{})
 
   const userLoginHandeler = (resultData) =>{
     
