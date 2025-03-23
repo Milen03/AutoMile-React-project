@@ -14,6 +14,18 @@ export default function Details() {
     const { car } = useCar(carId)
     const { deleteGame } = useDelete()
 
+    const carDeleteClickHendler = async () =>{
+        const hasConfirm = confirm(`Are you sure tou want to delete ${car.brand} Car ?`)
+
+        if(!hasConfirm){
+            return
+        }
+
+        await deleteGame(carId)
+
+        navigation('/cars/catalog')
+    }
+
     const isOwner = userId === car._ownerId
   return (
     <div className="relative min-h-screen bg-[#111827] text-white">
@@ -70,8 +82,10 @@ export default function Details() {
               >
                 Edit
               </button>
+
               <button
-                type="submit"
+              type="button"
+                onClick={carDeleteClickHendler}
                 className="mt-10 flex w-full items-center justify-center rounded-md bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Delete
@@ -111,6 +125,7 @@ export default function Details() {
 
               <div className="mt-4 space-y-6">
                 <p className="text-sm text-gray-300">{car.about}</p>
+                {car.about === '' &&(<p className="text-sm text-gray-300">No content for About</p>)}
               </div>
             </div>
           </div>

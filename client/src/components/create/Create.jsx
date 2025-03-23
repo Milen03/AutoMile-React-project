@@ -13,7 +13,7 @@ export default function Create() {
 
         await create(carData)
 
-        navigate('/catalog')
+        navigate('/cars/catalog')
     }
     
     return (
