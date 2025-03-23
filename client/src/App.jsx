@@ -13,6 +13,8 @@ import Logout from './components/logout/Logout.jsx'
 import Details from './components/details/Details.jsx'
 import Edit from './components/edit/Edit.jsx'
 import usePersistedState from './hooks/usePersistedState.js'
+import AuthGuard from './components/guards/Authguard.jsx'
+import GuestGuard from './components/guards/GuestGuard.jsx'
 
 function App() {
   const [authData,setAuthData] = usePersistedState('auth',{})
@@ -32,13 +34,17 @@ function App() {
     <Header />
     <Routes>
     <Route path='/' element={<Home />}/>
-    <Route path='/cars/create' element={<Create />}/>
     <Route path='/cars/catalog' element={<Catalog />}/>
     <Route path='/cars/:carId/details' element={<Details />}/>
+    <Route element={<AuthGuard />}>
+    <Route path='/cars/create' element={<Create />}/>
     <Route path='/cars/:carId/edit' element={<Edit />}/>
-    <Route path='/login' element={<Login />}/>
     <Route path='/logout' element={<Logout />}/>
+    </Route>
+    <Route element={<GuestGuard/>}>
+    <Route path='/login' element={<Login />}/>
     <Route path='/register' element={<Register />}/>
+    </Route>
     </Routes>
     </UserContext.Provider>
     </>
