@@ -1346,6 +1346,50 @@
     	}
     };
     var seedData = {
+        cars: {
+            "car1":{
+                _ownerId: "c22c8e20-559d-428d-9f36-a9ae583457b8",
+                brand: "Audi",
+                model: "A4 b6 1.9Tdi",
+                'car-year': "2003",
+                price: "4800",
+                engine: "Diesel",
+                imageUrl: "https://e0.pxfuel.com/wallpapers/587/644/desktop-wallpaper-audi-a4-audi-a4-stock-audi-a4-b6.jpg",
+                phoneNumber: "0877216068",
+                address: "Konstatin Panica",
+                about: "колата е Много добра ",
+                _createdOn: 1742580438246,
+                _id: "e8ddad60-06c3-4b6b-8d99-937ad99cdd1d"
+            },
+            "car2":{
+                _ownerId: "c22c8e20-559d-428d-9f36-a9ae583457b8",
+                brand: "BMW ",
+                model: "535i (306 Hp)",
+                'car-year': "2009",
+                price: "13500",
+                engine: "Diesel",
+                imageUrl: "https://www.tuning.bg/public/upload/gallery/extended/normal/136975.jpeg",
+                phoneNumber: "0877216097",
+                address: "bul.bulgaria ",
+                about: "The BMW 5 Series is an executive car manufactured and marketed by BMW since 1972. It is the successor to the BMW New Class sedans and is currently in its eighth generation. The car is sold as either a sedan or, since 1991, a station wagon (marketed as \"Touring\"). A 5-door fastback (marketed as \"Gran Turismo\") was sold between 2009 and 2017. Each successive generation has been given an internal G-code designation since 2017. Previously, a F-code designation was used between 2010 and 2016, while an E-code designation was used between 1972 and 2010. These are used to distinguish each model and generation from each other.",
+                createdOn: 1742742807530,
+                _id: "faf3c066-2e26-4153-aaa6-0b41c7331b5e"
+            },
+           "car3": {
+                _ownerId: "77e90b73-2430-4e48-accd-09d14f6710a8",
+                brand: "Nissan",
+                model: "GT-R",
+                "car-year": "2011",
+                price: "89000",
+                engine: "Petrol",
+                imageUrl: "https://i.infocar.ua/i/2/5057/97598/1920x.jpg",
+                phoneNumber: "0877211914",
+                address: "София Дружда 3",
+                about: "The Nissan GT-R (Gran Turismo–Racing; model code: R35; Japanese: 日産・GT-R; Nissan GT-R) is a series of cars built by Japanese marque Nissan since 2007 to 2025. It has a 2+2 seating layout and is considered both a sports car and a grand tourer. The engine is front-mid mounted and drives all four wheels. It succeeds the Nissan Skyline GT-R, a high-performance variant of the Nissan Skyline. Although this model was the sixth-generation to bear the GT-R name, it is no longer part of the Skyline line-up. The car is built on the PM platform, derived from the FM platform used in the Skyline and Nissan Z models. Production is conducted in a shared production line at Nissan's Tochigi plant in Japan.",
+                _createdOn: 1742743141390,
+                _id: "16de996d-ed94-434e-8c6b-f76f5348504e"
+            }
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
