@@ -3,7 +3,7 @@ import request from "../utils/request.js"
 import useAuth from "../hooks/useAuth.js"
 
 
-const baseUrl = 'http://localhost:3030/data/cars'
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/cars`
 
 export const useCars = () => {
     const [cars, setCars] = useState([])
