@@ -1,0 +1,59 @@
+{
+
+    "car1":{
+        "_ownerId": "8ec70fcd-4fd0-4803-95dd-d555e080122f",
+        "brand": "Audi",
+        "model": "A4 b6 1.9Tdi",
+        "car-year": "2003",
+        "price": "4800",
+        "engine": "Diesel",
+        "imageUrl": "https://e0.pxfuel.com/wallpapers/587/644/desktop-wallpaper-audi-a4-audi-a4-stock-audi-a4-b6.jpg",
+        "phoneNumber": "0877216068",
+        "address": "Konstatin Panica",
+        "about": "колата е Много добра",
+        "_createdOn": 1742930016634,
+        "_id": "1ed2e165-157a-49fb-96e6-cfa963dbc456"
+    },
+    "car2":{
+        "_ownerId": "8ec70fcd-4fd0-4803-95dd-d555e080122f",
+        "brand": "Nissan",
+        "model": "GT-R",
+        "car-year": "2011",
+        "price": "89000",
+        "engine": "Petrol",
+        "imageUrl": "https://i.infocar.ua/i/2/5057/97598/1920x.jpg",
+        "phoneNumber": "0877211914",
+        "address": "София Дружда 3",
+        "about": "",
+        "_createdOn": 1742930140241,
+        "_id": "d8480d32-9dcb-44e6-b06d-ede4649c97d7"
+    },
+   "car3": {
+        "_ownerId": "fa6acc96-845c-49b8-9634-fe1d61ddb86f",
+        "brand": "BMW",
+        "model": "535i (306 Hp)",
+        "car-year": "2009",
+        "price": "13500",
+        "engine": "Diesel",
+        "imageUrl": "https://www.tuning.bg/public/upload/gallery/extended/normal/136975.jpeg",
+        "phoneNumber": "0877219784",
+        "address": "bul.bulgaria ",
+        "about": "The BMW 5 Series is an executive car manufactured and marketed by BMW since 1972. It is the successor to the BMW New Class sedans and is currently in its eighth generation. The car is sold as either a sedan or, since 1991, a station wagon (marketed as \\\"Touring\\\"). A 5-door fastback (marketed as \\\"Gran Turismo\\\") was sold between 2009 and 2017. Each successive generation has been given an internal G-code designation since 2017. Previously, a F-code designation was used between 2010 and 2016, while an E-code designation was used between 1972 and 2010. These are used to distinguish each model and generation from each other.",
+        "_createdOn": 1742930219284,
+        "_id": "7530f586-d8d9-405f-97de-b85c61801bc4"
+    },
+   "car4": {
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "brand": "Mitsubishi",
+        "model": "Lancer",
+        "car-year": "2015",
+        "price": "19000",
+        "engine": "Petrol",
+        "imageUrl": "https://carsales.pxcrush.net/car/cil/mits5ju4.jpg?pxc_size=1200%2C630",
+        "phoneNumber": "0877216068",
+        "address": "Konstatin Panica",
+        "about": "For 2017, the Mitsubishi has discontinued the Lancer's GT trim level. Most of the GT's sport-themed features migrate to the SE trim level, though. All Lancers now get a rearview camera and the previously optional 6.1-inch center screen as standard.",
+        "_createdOn": 1743017544422,
+        "_id": "b3d693a3-0e36-401f-b5cf-27cac624c949"
+    }
+}
