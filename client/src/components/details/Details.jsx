@@ -2,7 +2,6 @@
 import { Link, useNavigate, useParams } from "react-router"
 import useAuth from "../../hooks/useAuth.js"
 import { useCar, useDelete } from "../../api/carsApi.js"
-import { useState } from "react"
 import { useLike, } from "../../api/likeAPI.js"
 
 export default function Details() {
@@ -11,6 +10,7 @@ export default function Details() {
   const { carId } = useParams()
   const { car } = useCar(carId)
   const { deleteGame } = useDelete()
+  
 
   const carDeleteClickHendler = async () => {
     const hasConfirm = confirm(`Are you sure you want to delete ${car.brand} Car?`)
@@ -98,6 +98,7 @@ export default function Details() {
                   
                   {!isOwner && !liked && (
                     <button
+                      type="button"
                       onClick={addLike}
                       className="mt-10 flex w-full items-center justify-center rounded-md bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >

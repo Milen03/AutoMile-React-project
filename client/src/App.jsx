@@ -1,6 +1,5 @@
 
 import './App.css'
-import { useState } from 'react'
 import { Route,Routes } from 'react-router'
 import Header from './components/header/Header.jsx'
 import Home from './components/home/Home.jsx'
@@ -15,6 +14,8 @@ import Edit from './components/edit/Edit.jsx'
 import usePersistedState from './hooks/usePersistedState.js'
 import AuthGuard from './components/guards/Authguard.jsx'
 import GuestGuard from './components/guards/GuestGuard.jsx'
+import Footer from './components/footer/Footer.jsx'
+
 
 function App() {
   const [authData,setAuthData] = usePersistedState('auth',{})
@@ -46,6 +47,7 @@ function App() {
     <Route path='/register' element={<Register />}/>
     </Route>
     </Routes>
+    <Footer/>
     </UserContext.Provider>
     </>
   )
