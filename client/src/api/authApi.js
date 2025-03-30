@@ -5,24 +5,30 @@ import { UserContext } from "../context/userContext.js"
 
 const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`
 
-export const useLogin = () =>{
-
-    const login = async (email,password) =>{
-    const result =  await request.post(`${baseUrl}/login`,{email,password})
-
-    return result
-    }
-
-    return{
-        login,
-    }   
-}
+export const useLogin = () => {
+    const login = async (email, password) => {
+      try {
+        const result = await request.post(`${baseUrl}/login`, { email, password });
+        return result;
+      } catch (error) {
+        alert("Login failed: " + error.message);
+      }
+    };
+  
+    return {
+      login,
+    };
+  };
 export const useRegister = () =>{
 
     const register = async(email,password)=>{
-        const result = await request.post(`${baseUrl}/register`,{email,password})
-
-        return result
+        try{
+            const result = await request.post(`${baseUrl}/register`,{email,password})
+            return result
+        }catch(error){
+            alert("Registration failed: " + error.message);
+        }
+        
     }
 
     return{
