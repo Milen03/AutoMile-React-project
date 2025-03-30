@@ -10,6 +10,10 @@ export default function Create() {
 
     const submitAction = async (formData) =>{
         const carData = Object.fromEntries(formData)
+        if (!carData.brand || !carData.model || !carData["car-year"] || !carData.price || !carData.engine || !carData.imageUrl || !carData.phoneNumber || !carData.address) {
+            alert("Please fill in all fields before submitting.");
+            return;
+        }
 
         await create(carData)
 

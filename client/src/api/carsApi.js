@@ -33,24 +33,34 @@ export const useCar = (carId) =>{
 export const useCreateCar = () => {
     const { request } = useAuth()
    
-    const create = (carData) =>
-        request.post(baseUrl, carData)
-
+    const create = async (carData) =>{
+        try{
+            return await request.post(baseUrl, carData)
+        }catch(err){
+            alert("Car creation failed: " + err.message);
+        }
+        
+    }
     return {
         create
     }
 }
 
 export const useEditCar = () => {
-    const { request } = useAuth()
+    const { request } = useAuth();
  
-    const edit = (carId, carData) =>
-    request.put(`${baseUrl}/${carId}`, { ...carData, _id: carId })
+    const edit = async (carId, carData) => {
+        try {
+            return await request.put(`${baseUrl}/${carId}`, { ...carData, _id: carId });
+        } catch (error) {
+            alert("Car update failed: " + error.message);
+        }
+    };
  
- return{
-     edit
-    }
- }
+    return { 
+        edit
+     };
+};
 
  export const useDelete = () =>{
 
