@@ -15,6 +15,7 @@ import usePersistedState from './hooks/usePersistedState.js'
 import AuthGuard from './components/guards/Authguard.jsx'
 import GuestGuard from './components/guards/GuestGuard.jsx'
 import Footer from './components/footer/Footer.jsx'
+import Page404 from './components/404/Page404.jsx'
 
 
 function App() {
@@ -33,7 +34,9 @@ function App() {
     <>
     <UserContext.Provider value={{...authData,userLoginHandeler,userLogoutHandeler}}>
     <Header />
+    
     <Routes>
+    <Route path='*' element={<Page404/>}/>
     <Route path='/' element={<Home />}/>
     <Route path='/cars/catalog' element={<Catalog />}/>
     <Route path='/cars/:carId/details' element={<Details />}/>

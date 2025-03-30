@@ -1,6 +1,5 @@
 import {  useEffect, useState } from "react"
 import request from "../utils/request.js"
-import useAuth from "../hooks/useAuth.js"
 
 const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/like`
 
@@ -16,7 +15,6 @@ export const useLike = (carId, userId, accessToken) => {
         .get(`${baseUrl}?where=carId%3D%22${carId}%22`)
         .then((data) => {
           setLikes(data);
-          // Проверяваме дали текущият потребител вече е харесал артикула
           const userLike = data.find((like) => like._ownerId === userId);
           if (userLike) {
             setLiked(true);
@@ -27,7 +25,7 @@ export const useLike = (carId, userId, accessToken) => {
         );
     }, [carId, userId]);
   
-    // Функция за изпращане на нов like
+    // New like post
     const addLike = () => {
       if (!liked) {
         request
