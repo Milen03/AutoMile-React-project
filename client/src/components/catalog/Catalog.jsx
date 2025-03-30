@@ -1,58 +1,15 @@
 import { useCars } from "../../api/carsApi.js"
 import CatalogItem from "./catalogItem/CatalogItem.jsx"
 
-const products = [
-    {
-      id: 1,
-      name: 'Earthen Bottle',
-      href: '#',
-      price: '$48',
-      imageSrc:
-        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-04-image-card-01.jpg',
-      imageAlt:
-        'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    },
-    {
-      id: 2,
-      name: 'Nomad Tumbler',
-      href: '#',
-      price: '$35',
-      imageSrc:
-        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-04-image-card-02.jpg',
-      imageAlt:
-        'Olive drab green insulated bottle with flared screw lid and flat top.',
-    },
-    {
-      id: 3,
-      name: 'Focus Paper Refill',
-      href: '#',
-      price: '$89',
-      imageSrc:
-        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-04-image-card-03.jpg',
-      imageAlt:
-        'Person using a pen to cross a task off a productivity paper card.',
-    },
-    {
-      id: 4,
-      name: 'Machined Mechanical Pencil',
-      href: '#',
-      price: '$35',
-      imageSrc:
-        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-04-image-card-04.jpg',
-      imageAlt:
-        'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    },
-    // More products...
-  ]
-
-
-
 
 export default function Catalog() {
-   
+
 const { cars } = useCars()
 
-
+if (!cars.length) {
+  return <p className="text-white text-center mt-10">No cars available.</p>;
+  
+}
 
     return (
         <div className="relative min-h-screen bg-[#111827] text-white">
