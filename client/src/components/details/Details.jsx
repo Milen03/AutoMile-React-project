@@ -26,7 +26,7 @@ export default function Details() {
 
 
 
-  const { likesCount, liked, addLike } = useLike(carId, userId, accessToken);
+  const { likesCount, liked, addLike } = useLike (carId, userId, accessToken);
 
 
 
