@@ -5,7 +5,7 @@ import { useLogin } from "../../api/authApi.js";
 
 export default function Login() {
       const navigate = useNavigate()
-      const { userLoginHandeler } = useContext(UserContext)
+      const { userLoginHandeler,usePersistedState} = useContext(UserContext)
       const { login } = useLogin()
 
       const loginHandler = async(_,formData) =>{
