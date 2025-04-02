@@ -34,7 +34,6 @@ function App() {
     <>
     <UserContext.Provider value={{...authData,userLoginHandeler,userLogoutHandeler}}>
     <Header />
-    
     <Routes>
     <Route path='*' element={<Page404/>}/>
     <Route path='/' element={<Home />}/>
