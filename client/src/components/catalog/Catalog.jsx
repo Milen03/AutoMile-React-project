@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useCars } from "../../api/carsApi.js"
 import CatalogItem from "./catalogItem/CatalogItem.jsx"
 
@@ -5,6 +6,13 @@ import CatalogItem from "./catalogItem/CatalogItem.jsx"
 export default function Catalog() {
 
   const { cars } = useCars()
+  const [query,setQuery] =useState("")
+
+  const filteredCars = query
+  ? cars.filter((car) =>
+    car.brand.toLowerCase().includes(query.toLowerCase())
+  )
+  :cars
 
   if (!cars.length) {
     return <p className="text-white text-center mt-10">No cars available.</p>;
@@ -37,9 +45,12 @@ export default function Catalog() {
               type="text"
               placeholder="Search by brand..."
               className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:ring-2 focus:ring-gray-500 outline-none"
+              value={query}
+              onChange={(e)=>setQuery(e.target.value)}
             />
             <button
               className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
+              onClick={()=>setQuery(query)}
             >
               Search
             </button>
@@ -48,7 +59,7 @@ export default function Catalog() {
         <h2 className="sr-only">Products</h2>
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {cars.map(cars => <CatalogItem key={cars._id} {...cars} />)}
+          {filteredCars.map(cars => <CatalogItem key={cars._id} {...cars} />)}
         </div>
       </div>
 
