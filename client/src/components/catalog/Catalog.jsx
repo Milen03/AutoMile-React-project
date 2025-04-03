@@ -48,12 +48,6 @@ export default function Catalog() {
               value={query}
               onChange={(e)=>setQuery(e.target.value)}
             />
-            <button
-              className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
-              onClick={()=>setQuery(query)}
-            >
-              Search
-            </button>
           </div>
         </div>
         <h2 className="sr-only">Products</h2>

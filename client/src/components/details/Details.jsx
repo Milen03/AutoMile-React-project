@@ -72,7 +72,7 @@ export default function Details() {
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-white">{car.price} Lv</p>
+            <p className="text-3xl tracking-tight text-white">{car.price} Лв</p>
             <form className="mt-10">
               {isOwner && (
                 <>
