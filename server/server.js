@@ -1391,18 +1391,18 @@
                 _id: "16de996d-ed94-434e-8c6b-f76f5348504e"
             },
             "car4": {
-                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "brand": "Mitsubishi",
-                "model": "Lancer",
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                brand: "Mitsubishi",
+                model: "Lancer",
                 "car-year": "2015",
-                "price": "19000",
-                "engine": "Petrol",
-                "imageUrl": "https://carsales.pxcrush.net/car/cil/mits5ju4.jpg?pxc_size=1200%2C630",
-                "phoneNumber": "0877216068",
-                "address": "Konstatin Panica",
-                "about": "For 2017, the Mitsubishi has discontinued the Lancer's GT trim level. Most of the GT's sport-themed features migrate to the SE trim level, though. All Lancers now get a rearview camera and the previously optional 6.1-inch center screen as standard.",
-                "_createdOn": 1743017544422,
-                "_id": "b3d693a3-0e36-401f-b5cf-27cac624c949"
+                price: "19000",
+                engine: "Petrol",
+                imageUrl: "https://carsales.pxcrush.net/car/cil/mits5ju4.jpg?pxc_size=1200%2C630",
+                phoneNumber: "0877216068",
+                address: "Konstatin Panica",
+                about: "For 2017, the Mitsubishi has discontinued the Lancer's GT trim level. Most of the GT's sport-themed features migrate to the SE trim level, though. All Lancers now get a rearview camera and the previously optional 6.1-inch center screen as standard.",
+                _createdOn: 1743017544422,
+                _id: "b3d693a3-0e36-401f-b5cf-27cac624c949"
             },
             "car5":{
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",

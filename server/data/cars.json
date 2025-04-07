@@ -55,5 +55,19 @@
         "about": "For 2017, the Mitsubishi has discontinued the Lancer's GT trim level. Most of the GT's sport-themed features migrate to the SE trim level, though. All Lancers now get a rearview camera and the previously optional 6.1-inch center screen as standard.",
         "_createdOn": 1743017544422,
         "_id": "b3d693a3-0e36-401f-b5cf-27cac624c949"
-    }
+    },
+    "car5":{
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "brand": "Kia",
+                "model": "Ceed",
+                "car-year": "2010",
+                "price": "12500",
+                "engine": "Petrol",
+                "imageUrl": "https://www.autocentrum.pl/NGU5NjQuYSY0VzhZfg5sMncPbEUwFmMhPFkrRTYUIiswRzdHIR0hMzoaew41Rn1-NlN7UmIUfiFlU3wJZEErfmMBYAAhEmw6",
+                "phoneNumber": "0877218877",
+                "address": "Konstatin Panica",
+                "about": "",
+                "_createdOn": 1743700448302,
+                "_id": "d083e9d8-a6f6-4080-ba6e-ea215cee9c52"
+            }
 }

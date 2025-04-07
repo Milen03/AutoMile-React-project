@@ -203,7 +203,7 @@ export default function Edit() {
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-            <Link to="/" className="text-sm font-semibold text-white">
+            <Link to={`/cars/${carId}/details`} className="text-sm font-semibold text-white">
               Cancel
             </Link>
 
