@@ -4,13 +4,7 @@ export default function Page404(){
     return(
 
         <>
-         {/* Този пример изисква актуализиране на вашия шаблон:
-
-        ```
-        <html className="h-full">
-        <body className="h-full">
-        ```
-      */}
+       
       <main className="grid min-h-full place-items-center bg-gray-900 text-white px-6 py-24 sm:py-32 lg:px-8">
         <div className="text-center">
           <p className="text-base font-semibold text-indigo-400">404</p>

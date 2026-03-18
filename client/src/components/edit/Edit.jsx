@@ -56,7 +56,7 @@ export default function Edit() {
                       name="brand"
                       type="text"
                       className="block w-[400px] rounded-md bg-gray-900 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
-                      defaultValue={car.brand}
+                     
                     />
                   </div>
                 </div>
